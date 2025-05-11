@@ -59,6 +59,7 @@ function App() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState(0);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -68,7 +69,7 @@ function App() {
     setMessages(newMessages);
 
     try {
-      const response = await axios.post("http://localhost:8080/api/chat", {
+      const response = await axios.post(`${apiUrl}/chat`, {
         messages: newMessages,
         step: step,
         answers,

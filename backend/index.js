@@ -17,6 +17,7 @@ const corsOptions = {
       'http://localhost:3000',
       'http://localhost:3001',
       "http://localhost:5173",
+      "https://chatboat-x60z.onrender.com"
     ];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
